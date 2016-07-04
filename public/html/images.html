@@ -1,0 +1,23 @@
+<h1>Images in Album</h1>
+
+
+<div class="row">
+	<div class="col-sm-6">
+
+		<form ng-submit='addOneImage(newImage)'>
+			<div class="form-group">
+				<label>Image URL</label>
+				<input class="form-control" type="text" placeholder="URL of Image" ng-model='newImage.url' required>
+			</div>
+			<button type="submit" class="btn btn-primary submit-button">Submit</button>
+		</form>
+
+	</div>
+</div>
+
+<div class=thumb-box" ng-repeat="image in imageArray track by $index">
+	<img class="thumb" ui-sref="imageShow({imageId:image._id})" ng-src="{{image.url}}" width=300 />
+				<button class="image-delete-button btn btn-danger" ng-click="removeOneImage(image)">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</button>
+</div>

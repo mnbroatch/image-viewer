@@ -1,0 +1,49 @@
+<h1>Albums</h1>
+
+
+<div class="row">
+	<div class="col-sm-6">
+
+		<form ng-submit='addOneAlbum(newAlbum)'>
+			<div class="form-group">
+				<label>Album Name</label>
+				<input class="form-control" type="text" placeholder="Name of Album" ng-model='newAlbum.name' required>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+
+	</div>
+</div>
+
+
+<div class="table-container">
+	<table class="table">
+		<thead>
+			<th>Album Name</th>
+		</thead>
+		<colgroup>
+			<col style="width:80%">
+			<col style="width:20%">
+		</colgroup>  
+
+		<tr ng-repeat="album in albumArray track by $index">
+			<td>
+				<a href="#" editable-text="album.name" onbeforesave="editOneAlbum(album)" e-required>{{ album.name ||'empty' }}</a>
+			</td>
+			<td>
+				<button class="view-button btn btn-primary " ui-sref="images({albumId: album._id})">
+					<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+				</button>
+				<button class="delete-button btn btn-danger" ng-click="removeOneAlbum(album)">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</button>
+			</td>
+		</tr>
+
+
+	</tr>
+
+</table>
+
+</div>
+

@@ -1,0 +1,30 @@
+.buttons-cell {
+	text-align:right;	
+}
+
+.table-container {
+	margin-top:50px;
+}
+
+td {
+	vertical-align:middle!important;
+}
+
+.image-show {
+	max-width:90vw;
+}
+
+.image-delete-button {
+	position:relative;
+	bottom:55px;
+	right:60px;
+}
+
+.thumb {
+	margin:10px;
+	margin-left:0;
+}
+
+.thumb-box {
+	display:inline-block;
+}
